@@ -18,12 +18,12 @@ func _input(event : InputEvent):
 			rotate_x(deg_to_rad(changev))
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		#for (int i = 0; i<nb_ray)
-		var camera = $Camera
-		var from = project_ray_origin(event.position)
-		var to = from + project_ray_normal(event.position) * ray_length
-		
-		print(position, from, to)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(global_position, character.global_position)
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query) 
+		print(result)
+
 func _process(delta):
 	
 	pass

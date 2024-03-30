@@ -7,6 +7,7 @@ const FALL_SPEED : int = 981
 const MAX_VELOCITY_MOUSE : int = 25
 var prev_collider : Object = null
 var collider : Object = null
+var pause : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +22,6 @@ func _input(event : InputEvent):
 func _process(delta) -> void:
 	var input_dir : Vector2 = Input.get_vector("left", "right", "up", "down")
 	var direction : Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	var pause : bool = false
 	if !(pause):
 		if direction:
 			position.x += direction.x * MOVEMENT_SPEED * delta
@@ -35,11 +35,12 @@ func _process(delta) -> void:
 			collider = null
 	if (Input.is_action_just_pressed("interact") and collider != null):
 		if (pause == false):
-			collider.pick_up()
+			#collider.pick_up()
 			pause = true
+			collider.get_node("mesh/outline").visible = true
 		else :
-			collider.put_down()
+			#collider.put_down()
 			pause = false
+			collider.get_node("mesh/outline").visible = false
 	move_and_slide()
 
-#func raycast() -> Array[]
