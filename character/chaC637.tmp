@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5k2nkpcqyyru"]
+
+[ext_resource type="Script" path="res://character/character.gd" id="1_fyap8"]
+[ext_resource type="Script" path="res://character/Camera3D.gd" id="2_ujy23"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7wbc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y1q7b"]
+
+[node name="Character" type="CharacterBody3D"]
+collision_mask = 14
+script = ExtResource("1_fyap8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00135, 0)
+shape = SubResource("CapsuleShape3D_e7wbc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00135, 0)
+mesh = SubResource("CapsuleMesh_y1q7b")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.711, 0)
+script = ExtResource("2_ujy23")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+collision_mask = 8
+collide_with_areas = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 31.0
+offset_bottom = 28.0
+text = "eaa"

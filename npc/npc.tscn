@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccavsh76n0ik8"]
+
+[ext_resource type="Script" path="res://npc/npc.gd" id="1_gglf8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ectm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4j00g"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_qvwh4"]
+
+[node name="Npc" type="StaticBody3D"]
+collision_layer = 16
+script = ExtResource("1_gglf8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0ectm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4j00g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0922489, -0.995736, 0, 0.995736, 0.0922489, 0, 1.02782, 0.152758)
+mesh = SubResource("PrismMesh_qvwh4")

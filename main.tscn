@@ -1,11 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://snbl2jnj5lcn"]
+[gd_scene load_steps=9 format=3 uid="uid://snbl2jnj5lcn"]
 
 [ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
 [ext_resource type="PackedScene" uid="uid://c86k8bxfrt1ym" path="res://Item/test.tscn" id="2_wstmv"]
+[ext_resource type="Script" path="res://path/Pas.gd" id="3_6qcil"]
+[ext_resource type="PackedScene" uid="uid://d0v18wmoull8n" path="res://path/step.tscn" id="4_cxvh7"]
+[ext_resource type="PackedScene" uid="uid://ccavsh76n0ik8" path="res://npc/npc.tscn" id="5_b45ur"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6l268"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlj6w"]
+
+[sub_resource type="Curve3D" id="Curve3D_uhc76"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.55507, 0.366779, -1.26061, 0, 0, 0, 0, 0, 0, 4.08921, 0.53616, -0.643076, 0.035, 0, 0, 0, 0, 0, 4.9236, -1.13664, -1.98907, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Main" type="Node3D"]
 
@@ -47,3 +57,15 @@ transform = Transform3D(-0.688443, 2.05172e-08, -0.72529, -0.307851, 0.90545, 0.
 
 [node name="Test" parent="." instance=ExtResource("2_wstmv")]
 transform = Transform3D(-3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0, 0.9, 0, 2, -2.37721)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785835, -0.263058, -4.22628)
+curve = SubResource("Curve3D_uhc76")
+script = ExtResource("3_6qcil")
+step_number = 4
+show = true
+
+[node name="Step" parent="." instance=ExtResource("4_cxvh7")]
+
+[node name="Npc" parent="." instance=ExtResource("5_b45ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31886, 1.1029, 0)
