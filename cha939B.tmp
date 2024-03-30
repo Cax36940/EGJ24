@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://character.gd" id="1_pxjq7"]
 [ext_resource type="Script" path="res://Camera3D.gd" id="2_ujy23"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7wbc"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_i26os"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y1q7b"]
 
@@ -11,13 +11,11 @@
 script = ExtResource("1_pxjq7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00135, 0)
-shape = SubResource("CapsuleShape3D_e7wbc")
+shape = SubResource("BoxShape3D_i26os")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00135, 0)
 mesh = SubResource("CapsuleMesh_y1q7b")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.711, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
 script = ExtResource("2_ujy23")
