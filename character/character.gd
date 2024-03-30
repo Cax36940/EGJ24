@@ -13,12 +13,6 @@ var pause : bool = false
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _input(event : InputEvent):
-	if (event is InputEventMouseMotion):
-		var sensitivity = 0.005
-		var mouse_velocity = event.relative.x
-		rotate_y(deg_to_rad(-mouse_velocity * camera.mouse_sens))
-
 func _process(delta) -> void:
 	var input_dir : Vector2 = Input.get_vector("left", "right", "up", "down")
 	var direction : Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
