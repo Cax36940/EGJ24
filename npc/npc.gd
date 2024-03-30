@@ -11,8 +11,8 @@ func _process(delta):
 	pass
 
 func engage(character : CharacterBody3D):
-	look_at(character.global_position,Vector3(0,0,1))
-	#NPC rotate to player, NPC does something ??
+	var angle : float = global_position.angle_to(character.global_position)
+	print(angle)#NPC rotate to player, NPC does something ??
 	#rotate_y(character.global_position)
 	pass
 
