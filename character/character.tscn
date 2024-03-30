@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5k2nkpcqyyru"]
 
-[ext_resource type="Script" path="res://character.gd" id="1_pxjq7"]
-[ext_resource type="Script" path="res://Camera3D.gd" id="2_ujy23"]
+[ext_resource type="Script" path="res://character/character.gd" id="1_fyap8"]
+[ext_resource type="Script" path="res://character/Camera3D.gd" id="2_ujy23"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7wbc"]
 
@@ -9,7 +9,7 @@
 
 [node name="Character" type="CharacterBody3D"]
 collision_mask = 14
-script = ExtResource("1_pxjq7")
+script = ExtResource("1_fyap8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00135, 0)
