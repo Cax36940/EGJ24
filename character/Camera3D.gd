@@ -12,23 +12,14 @@ func _ready():
 
 func _input(event : InputEvent):
 	if event is InputEventMouseMotion and character.pause != true:
-		##sets x
 		var sensitivity = 0.005
 		var mouse_velocity = event.relative.x
 		character.rotate_y(deg_to_rad(-mouse_velocity * self.mouse_sens))
-		#sets y
 		var changev=-event.relative.y*mouse_sens
 		if camera_anglev+changev>-50 and camera_anglev+changev<50:
 			camera_anglev+=changev
 			rotate_x(deg_to_rad(changev))
-	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		#for (int i = 0; i<nb_ray)
-		var camera = $Camera
-		var from = project_ray_origin(event.position)
-		var to = from + project_ray_normal(event.position) * ray_length
-		
-		print(position, from, to)
-		
+
 func _process(delta):
 	pass
 

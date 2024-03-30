@@ -21,29 +21,29 @@ func _process(delta) -> void:
 			position.x += direction.x * MOVEMENT_SPEED * delta
 			position.z += direction.z * MOVEMENT_SPEED * delta
 		velocity.y -= FALL_SPEED * delta
-		
 		if (ray_cast.is_colliding()):
-			prev_collider = collider
 			collider = ray_cast.get_collider()
 		else :
+			if (collider != null): collider.is_interacting = false
 			collider = null
-	if (Input.is_action_just_pressed("interact") and collider != null):
-		if (pause == false):
-			if (collider is Npc):
-				collider.engage(self)
-				$UI/Control.visible = true
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			else: 
-				#collider.pick_up()
-				collider.get_node("mesh/outline").visible = true
-			pause = true
-		else :
-			if (collider is Npc):
-				collider.disengage(self)
-				$UI/Control.visible = false
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			else: 
-				#collider.put_down()
-				collider.get_node("mesh/outline").visible = false
-			pause = false
+	if (collider != null):
+		collider.is_interacting = true
+		if (Input.is_action_just_pressed("interact") and collider != null):
+			if (pause == false):
+				if (collider is Npc):
+					collider.engage(self)
+					$UI/Control.visible = true
+					Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				else: 
+					collider.pick_up(self)
+					collider.get_node("mesh/outline").visible = true
+				pause = true
+			else :
+				if (collider is Npc):
+					collider.disengage(self)
+					$UI/Control.visible = false
+					Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				else: 
+					collider.put_down(self)
+				pause = false
 	move_and_slide()

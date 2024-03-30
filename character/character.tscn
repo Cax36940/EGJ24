@@ -90,3 +90,6 @@ size_flags_vertical = 0
 [node name="Button" type="Button" parent="UI/Control/MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 icon = ExtResource("3_awmo8")
+
+[node name="Point" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.586234, 1.19366, -1.07543)
