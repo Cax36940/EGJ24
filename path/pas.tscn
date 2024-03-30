@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmdiwvruvrpu8"]
+
+[ext_resource type="Script" path="res://path/Pas.gd" id="1_njwr4"]
+
+[sub_resource type="Curve3D" id="Curve3D_bt36y"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.072, 0, 1.867, -0.0720482, 0.0300741, -1.86732, 4.34813, 0.00904942, -1.00262, 0, 0, 0, 0, 0, 0, 4.28117, 0.0684261, -2.92859, 0, 0, 0, 0, 0, 0, 4.141, 0, -5.922),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_bt36y")
+script = ExtResource("1_njwr4")
+step_number = 15
+show = true
