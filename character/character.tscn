@@ -15,7 +15,7 @@ collision_mask = 30
 script = ExtResource("1_fyap8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00135, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.989932, 0)
 shape = SubResource("CapsuleShape3D_e7wbc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
