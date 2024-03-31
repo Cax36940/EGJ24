@@ -12,6 +12,5 @@ point_count = 5
 [node name="Path3D" type="Path3D"]
 curve = SubResource("Curve3D_bt36y")
 script = ExtResource("1_njwr4")
-spacing = null
 step_number = 15
 show = true

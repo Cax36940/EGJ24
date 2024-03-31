@@ -24,6 +24,7 @@ mesh = SubResource("CapsuleMesh_y1q7b")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.711, 0)
+current = true
 script = ExtResource("2_ujy23")
 
 [node name="Point" type="Node3D" parent="Camera3D"]

@@ -28,7 +28,6 @@ const DIST_BETWEEN_STEP : float = 0.75
 func _ready():
 	update_path()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -41,11 +40,12 @@ func toggle_highlight():
 			tween.tween_property(normal, "modulate", Color(Color.WHITE,0.3), 0.1)
 		else :
 			tween.tween_property(normal, "modulate", Color(Color.WHITE,1), 0.1)
+
 func update_path():
 	for i in range(step_number):
 		var step_instance : Node3D = step_scene.instantiate()
 		var transform_path : Transform3D = get_curve().sample_baked_with_rotation(float(i)*DIST_BETWEEN_STEP)
 		step_instance.position = transform_path.origin + spacing * transform_path.basis.x * (1 if i%2 == 0 else -1)
 		step_instance.basis = transform_path.basis
-		step_instance.get_child(0).texture = foot_image
+		step_instance.get_node("StaticBody3D/normal").texture = foot_image
 		add_child(step_instance)
