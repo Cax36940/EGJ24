@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://chdek6qjiqjf"]
+[gd_scene load_steps=2 format=3 uid="uid://chdek6qjiqjf"]
+
+[ext_resource type="Script" path="res://cutscene/cutscene.gd" id="1_ql0jo"]
 
 [node name="Cutscene" type="Node3D"]
+script = ExtResource("1_ql0jo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
