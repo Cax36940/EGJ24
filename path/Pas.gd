@@ -37,10 +37,8 @@ func _process(delta):
 func toggle_highlight():
 	for child : Node3D in get_children():
 		var normal : Sprite3D = child.get_node("StaticBody3D/normal")
-		var highlight : Sprite3D = child.get_node("StaticBody3D/highlight")
-		if (normal.visible):
-			normal.visible = false
-			highlight.visible = true
+		var tween : Tween = create_tween()
+		if (normal.modulate.a == 1):
+			tween.tween_property(normal, "modulate", Color(Color.WHITE,0.3), 0.1)
 		else :
-			normal.visible = true
-			highlight.visible = false
+			tween.tween_property(normal, "modulate", Color(Color.WHITE,1), 0.1)

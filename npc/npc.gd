@@ -5,9 +5,10 @@ extends StaticBody3D
 var is_pointing = false
 var highlight_trace = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _ready():
+	if ($Cursor/AnimationPlayer != null):
+		$Cursor/AnimationPlayer.play("idle")
+
 
 func engage(character : CharacterBody3D):
 	## Npc se tourne vers le joueur ???
@@ -19,6 +20,7 @@ func engage(character : CharacterBody3D):
 
 func detain():
 	get_tree().quit()
+
 
 func follow():
 	main_scene.toggle_follow()

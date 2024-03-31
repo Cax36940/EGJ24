@@ -36,8 +36,8 @@ func _process(delta) -> void:
 			if !(paths.highlighted): paths.toggle_highlight()
 		else :
 			if (steps != null): 
-				var paths = steps.get_parent().get_parent()
-				paths.toggle_highlight()
+				var paths = steps.get_parent().get_parent().get_parent()
+				if (paths.highlighted): paths.toggle_highlight()
 			steps = null
 	if (collider != null):
 		collider.is_pointing = true

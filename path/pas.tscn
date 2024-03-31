@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmdiwvruvrpu8"]
+[gd_scene load_steps=3 format=3 uid="uid://cmdiwvruvrpu8"]
 
 [ext_resource type="Script" path="res://path/Pas.gd" id="1_njwr4"]
-[ext_resource type="Script" path="res://path/paths.gd" id="1_uh2ta"]
 
 [sub_resource type="Curve3D" id="Curve3D_bt36y"]
 _data = {
@@ -11,7 +10,6 @@ _data = {
 point_count = 5
 
 [node name="Paths" type="Node3D"]
-script = ExtResource("1_uh2ta")
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_bt36y")
