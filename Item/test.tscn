@@ -29,7 +29,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.581275, 0)
 shape = SubResource("CylinderShape3D_cenlr")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.538943, 0, 0, 0, 1, 0, 0.563652, 0)
+transform = Transform3D(1, 0, 0, 0, 0.538943, 0, 0, 0, 1, 0, 0.0530606, 0)
 mesh = SubResource("BoxMesh_01cae")
 
 [node name="outline" type="MeshInstance3D" parent="mesh"]

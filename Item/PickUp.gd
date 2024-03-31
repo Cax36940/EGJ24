@@ -2,6 +2,7 @@ class_name PickUp
 extends StaticBody3D
 
 var start_position
+var is_pointing = false
 var is_interacting = false
 #var distance_look : Vector3
 #if (distance_look.distance_to(character.position)):
@@ -23,24 +24,24 @@ func handle(event: InputEventMouseMotion):
 		rotate_z(deg_to_rad(-changev * mouse_sens))
 
 func _process(delta : float) -> void:
-	if (is_interacting):
+	if (is_pointing):
 		outline.visible = true
 	else :
 		outline.visible = false
 
-func get_object_size() -> Vector3:
-	var global_position = global_transform.origin
-	var object_scale = scale
-	# Obtene les dimensions de l'objet (vous pouvez ajuster cela en fonction de votre modèle)
-	var object_dimensions = Vector3(1.0, 1.0, 1.0)
-	# Calcule la taille approximative de l'objet en multipliant ses dimensions par son échelle
-	var object_size = object_dimensions * object_scale
-	return object_size
+#func get_object_size() -> Vector3:
+	#var global_position = global_transform.origin
+	#var object_scale = scale
+	## Obtene les dimensions de l'objet (vous pouvez ajuster cela en fonction de votre modèle)
+	#var object_dimensions = Vector3(1.0, 1.0, 1.0)
+	## Calcule la taille approximative de l'objet en multipliant ses dimensions par son échelle
+	#var object_size = object_dimensions * object_scale
+	#return object_size
 	
 func pick_up(character : CharacterBody3D) -> void:
 	start_position = self.global_position
 	var tween : Tween = create_tween()
-	tween.tween_property(self,"global_position",character.get_node("Point").global_position,0.5)
+	tween.tween_property(self,"global_position",character.get_node("Camera3D/Point").global_position,0.5)
 	#var start_position = global_transform.origin
 	#var start_rotation = global_transform.basis.get_euler()
 	#var center_position = get_viewport().get_visible_rect().size / 2  # Calcule la position du centre de la vue dans le monde

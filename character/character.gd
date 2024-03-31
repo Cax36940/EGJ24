@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var camera : Camera3D = $Camera3D
 @onready var ray_cast : RayCast3D = $Camera3D/RayCast3D
 const MOVEMENT_SPEED : int = 4
-const FALL_SPEED : int = 981
+const FALL_SPEED : int = 9.8
 const MAX_VELOCITY_MOUSE : int = 25
 var prev_collider : Object = null
 var collider : Object = null
@@ -24,10 +24,10 @@ func _process(delta) -> void:
 		if (ray_cast.is_colliding()):
 			collider = ray_cast.get_collider()
 		else :
-			if (collider != null): collider.is_interacting = false
+			if (collider != null): collider.is_pointing = false
 			collider = null
 	if (collider != null):
-		collider.is_interacting = true
+		collider.is_pointing = true
 		if (Input.is_action_just_pressed("interact") and collider != null):
 			if (pause == false):
 				if (collider is Npc):
@@ -37,6 +37,7 @@ func _process(delta) -> void:
 				else: 
 					collider.pick_up(self)
 					collider.get_node("mesh/outline").visible = true
+					collider.is_interacting = true
 				pause = true
 			else :
 				if (collider is Npc):
@@ -45,5 +46,6 @@ func _process(delta) -> void:
 					Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 				else: 
 					collider.put_down(self)
+					collider.is_interacting = false
 				pause = false
 	move_and_slide()
