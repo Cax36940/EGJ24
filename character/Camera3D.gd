@@ -6,9 +6,9 @@ var camera_anglev : float = 0
 var ray_length : int = 100
 var nb_ray : int = 10
 
-func _ready():
-	position.y = character.position.y
-	position.x = character.position.x
+#func _ready():
+	#position.y = character.position.y
+	#position.x = character.position.x
 
 func _input(event : InputEvent):
 	if event is InputEventMouseMotion and character.pause != true:
