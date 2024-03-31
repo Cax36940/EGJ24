@@ -8,6 +8,7 @@ const MAX_VELOCITY_MOUSE : int = 25
 var prev_collider : Object = null
 var collider : Object = null
 var pause : bool = false
+var is_interacting : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,30 +29,34 @@ func _process(delta) -> void:
 			collider = null
 	if (collider != null):
 		collider.is_pointing = true
-		if (Input.is_action_just_pressed("interact") and collider != null):
+		if (Input.is_action_just_pressed("interact") and collider != null and !is_interacting):
 			if (pause == false):
+				## Engage le PNJ --> intéragie
 				if (collider is Npc):
 					collider.engage(self)
 					$UI/Control.visible = true
 					Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				
+				## Prend un objet
 				else: 
 					collider.pick_up(self)
 					collider.get_node("mesh/outline").visible = true
 					collider.is_interacting = true
 				pause = true
+				
 			else :
-				if (collider is Npc):
-					disengage(self,collider)
-				else: 
+				### Pose un Objet
+				if !(collider is Npc):
 					collider.put_down(self)
 					collider.is_interacting = false
-				pause = false
+					pause = false
 	move_and_slide()
 
-func disengage(_self : CharacterBody3D, _collider : Object):
-	_collider.disengage(_self)
+func disengage(_collider : Object):
 	$UI/Control.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	is_interacting = false
+	pause = false
 
 func _on_detain_pressed():
 	collider.detain()
@@ -59,5 +64,4 @@ func _on_detain_pressed():
 
 func _on_follow_pressed():
 	collider.follow()
-	disengage(self,collider)
-	pause = false
+	disengage(collider)

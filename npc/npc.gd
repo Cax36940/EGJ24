@@ -22,6 +22,4 @@ func detain():
 
 func follow():
 	main_scene.toggle_follow()
-
-func disengage(character : CharacterBody3D):
 	main_scene.idx_current = -1

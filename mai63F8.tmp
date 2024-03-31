@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://snbl2jnj5lcn"]
+
+[ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
+[ext_resource type="Script" path="res://main_script.gd" id="1_wxsun"]
+[ext_resource type="PackedScene" uid="uid://c86k8bxfrt1ym" path="res://Item/test.tscn" id="2_wstmv"]
+[ext_resource type="Script" path="res://path/Pas.gd" id="3_6qcil"]
+[ext_resource type="PackedScene" uid="uid://d0v18wmoull8n" path="res://path/step.tscn" id="4_cxvh7"]
+[ext_resource type="PackedScene" uid="uid://ccavsh76n0ik8" path="res://npc/npc.tscn" id="5_b45ur"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6l268"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vlj6w"]
+
+[sub_resource type="Curve3D" id="Curve3D_uhc76"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.55507, 0.366779, -1.26061, 0, 0, 0, 0, 0, 0, 4.08921, 0.53616, -0.643076, 0.035, 0, 0, 0, 0, 0, 4.9236, -1.13664, -1.98907, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("suspects", "paths")]
+script = ExtResource("1_wxsun")
+suspects = [NodePath("Npc"), NodePath("Npc2")]
+paths = [NodePath("Path3D"), NodePath("Path3D2")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 0.0377366, -0.510555, -0.106507)
+mesh = SubResource("BoxMesh_6l268")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_vlj6w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-07, -2, 0, 5, -8.74228e-08, 0, 0, 0, 5, 3.44182, 0.574687, -0.106507)
+mesh = SubResource("BoxMesh_6l268")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_vlj6w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.25686e-10, -0.00527086, -4.99998, 2.83735, 1.64678, -0.01085, 4.11697, -1.13494, 0.00747764, -0.0993807, 0.915893, 3.31934)
+mesh = SubResource("BoxMesh_6l268")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_vlj6w")
+
+[node name="Character" parent="." instance=ExtResource("1_4i1pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.688443, 2.05172e-08, -0.72529, -0.307851, 0.90545, 0.292211, 0.656714, 0.424452, -0.623351, -3.9719, 3.19382, -12.6659)
+
+[node name="Test" parent="." instance=ExtResource("2_wstmv")]
+transform = Transform3D(-3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0, 0.9, 0, 2, -2.37721)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785835, -0.263058, -4.22628)
+visible = false
+curve = SubResource("Curve3D_uhc76")
+script = ExtResource("3_6qcil")
+step_number = 4
+show = true
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75152, 0.120062, -0.790683)
+visible = false
+curve = SubResource("Curve3D_uhc76")
+script = ExtResource("3_6qcil")
+step_number = 4
+show = true
+
+[node name="Step" parent="." instance=ExtResource("4_cxvh7")]
+
+[node name="Npc" parent="." instance=ExtResource("5_b45ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31886, 1.1029, 0)
+
+[node name="Npc2" parent="." instance=ExtResource("5_b45ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397725, 3.11518, 4.75235)
