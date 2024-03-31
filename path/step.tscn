@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0v18wmoull8n"]
+[gd_scene load_steps=5 format=3 uid="uid://d0v18wmoull8n"]
 
 [ext_resource type="Texture2D" uid="uid://3gdt0tppbmr5" path="res://path/Pas.png" id="1_axel4"]
+[ext_resource type="Script" path="res://path/step.gd" id="1_xm6jl"]
+[ext_resource type="Texture2D" uid="uid://cmf3bfi5dst0c" path="res://path/Pas_highlight.png" id="2_dmccs"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mcwc0"]
+height = 0.01
+radius = 0.2
 
 [node name="Step" type="Node3D"]
+script = ExtResource("1_xm6jl")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_mcwc0")
+
+[node name="highlight" type="Sprite3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+visible = false
 texture = ExtResource("1_axel4")
+
+[node name="normal" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("2_dmccs")

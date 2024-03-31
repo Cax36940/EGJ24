@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
 @onready var camera : Camera3D = $Camera3D
-@onready var ray_cast : RayCast3D = $Camera3D/RayCast3D
+@onready var ray_cast : RayCast3D = $Camera3D/interaction
+@onready var ray_cast_highlighter : RayCast3D = $Camera3D/highlight
 const MOVEMENT_SPEED : int = 4
 const FALL_SPEED : int = 9.8
 const MAX_VELOCITY_MOUSE : int = 25
@@ -9,6 +10,7 @@ var prev_collider : Object = null
 var collider : Object = null
 var pause : bool = false
 var is_interacting : bool = false
+var steps : Node3D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +29,16 @@ func _process(delta) -> void:
 		else :
 			if (collider != null): collider.is_pointing = false
 			collider = null
+		if (ray_cast_highlighter.is_colliding()):
+			steps = ray_cast_highlighter.get_collider()
+			var paths = steps.get_parent().get_parent().get_parent()
+			## Appeler fonction mettre highlight
+			if !(paths.highlighted): paths.toggle_highlight()
+		else :
+			if (steps != null): 
+				var paths = steps.get_parent().get_parent()
+				paths.toggle_highlight()
+			steps = null
 	if (collider != null):
 		collider.is_pointing = true
 		if (Input.is_action_just_pressed("interact") and collider != null and !is_interacting):

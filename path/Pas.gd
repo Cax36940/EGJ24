@@ -5,7 +5,6 @@ extends Path3D
 var step_scene : PackedScene = preload("res://path/step.tscn")
 const DIST_BETWEEN_STEP : float = 0.75
 
-
 @export var step_number : int = 5 :
 	set(new_value) :
 		show = false
@@ -34,3 +33,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func toggle_highlight():
+	for child : Node3D in get_children():
+		var normal : Sprite3D = child.get_node("StaticBody3D/normal")
+		var highlight : Sprite3D = child.get_node("StaticBody3D/highlight")
+		if (normal.visible):
+			normal.visible = false
+			highlight.visible = true
+		else :
+			normal.visible = true
+			highlight.visible = false

@@ -64,6 +64,7 @@ interact={
 3d_physics/layer_3="ground"
 3d_physics/layer_4="object"
 3d_physics/layer_5="npc"
+3d_physics/layer_6="steps"
 
 [rendering]
 
