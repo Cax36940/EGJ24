@@ -41,31 +41,6 @@ _subresources={
 "physics/layer": 6,
 "physics/shape_type": 2
 },
-"PATH:Cube_003": {
-"generate/physics": true,
-"physics/layer": 6,
-"physics/shape_type": 2
-},
-"PATH:Cube_004": {
-"generate/physics": true,
-"physics/layer": 6,
-"physics/shape_type": 2
-},
-"PATH:Cube_005": {
-"generate/physics": true,
-"physics/layer": 6,
-"physics/shape_type": 2
-},
-"PATH:Cube_006": {
-"generate/physics": true,
-"physics/layer": 6,
-"physics/shape_type": 2
-},
-"PATH:Cube_007": {
-"generate/physics": true,
-"physics/layer": 6,
-"physics/shape_type": 2
-},
 "PATH:Lamp_001": {
 "generate/physics": true,
 "physics/layer": 6,
@@ -81,7 +56,7 @@ _subresources={
 "physics/layer": 6,
 "physics/shape_type": 2
 },
-"PATH:Plane_023": {
+"PATH:Main structure": {
 "generate/physics": true,
 "physics/layer": 6,
 "physics/shape_type": 2
@@ -89,12 +64,12 @@ _subresources={
 "PATH:Plane_024": {
 "generate/physics": true,
 "physics/layer": 6,
-"physics/shape_type": 2
+"physics/shape_type": 1
 },
 "PATH:Plane_025": {
 "generate/physics": true,
 "physics/layer": 6,
-"physics/shape_type": 2
+"physics/shape_type": 1
 },
 "PATH:Plane_026": {
 "generate/physics": true,
@@ -107,6 +82,16 @@ _subresources={
 "physics/shape_type": 2
 },
 "PATH:Plane_028": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_029": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_030": {
 "generate/physics": true,
 "physics/layer": 6,
 "physics/shape_type": 2
@@ -135,11 +120,6 @@ _subresources={
 "generate/physics": true,
 "physics/layer": 2,
 "physics/shape_type": 1
-},
-"PATH:library": {
-"generate/physics": true,
-"physics/layer": 6,
-"physics/shape_type": 2
 },
 "PATH:table": {
 "generate/physics": true,

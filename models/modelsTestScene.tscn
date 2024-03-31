@@ -33,4 +33,4 @@ autoplay = "base_character/Idle1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 11)
 
 [node name="Character" parent="." instance=ExtResource("5_1fhly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.191829, 2.65694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550729, 2.65694)
