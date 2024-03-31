@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://snbl2jnj5lcn"]
+[gd_scene load_steps=10 format=3 uid="uid://snbl2jnj5lcn"]
 
 [ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
+[ext_resource type="Script" path="res://main_script.gd" id="1_wxsun"]
 [ext_resource type="PackedScene" uid="uid://c86k8bxfrt1ym" path="res://Item/test.tscn" id="2_wstmv"]
 [ext_resource type="Script" path="res://path/Pas.gd" id="3_6qcil"]
 [ext_resource type="PackedScene" uid="uid://d0v18wmoull8n" path="res://path/step.tscn" id="4_cxvh7"]
@@ -17,7 +18,10 @@ _data = {
 }
 point_count = 4
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" node_paths=PackedStringArray("suspects", "paths")]
+script = ExtResource("1_wxsun")
+suspects = [NodePath("Npc"), NodePath("Npc2")]
+paths = [NodePath("Path3D"), NodePath("Path3D2")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 0.0377366, -0.510555, -0.106507)
@@ -60,6 +64,15 @@ transform = Transform3D(-3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0, 0.9, 
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785835, -0.263058, -4.22628)
+visible = false
+curve = SubResource("Curve3D_uhc76")
+script = ExtResource("3_6qcil")
+step_number = 4
+show = true
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75152, 0.120062, -0.790683)
+visible = false
 curve = SubResource("Curve3D_uhc76")
 script = ExtResource("3_6qcil")
 step_number = 4
@@ -69,3 +82,6 @@ show = true
 
 [node name="Npc" parent="." instance=ExtResource("5_b45ur")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31886, 1.1029, 0)
+
+[node name="Npc2" parent="." instance=ExtResource("5_b45ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397725, 3.11518, 4.75235)

@@ -4,20 +4,17 @@ extends StaticBody3D
 var start_position
 var is_pointing = false
 var is_interacting = false
-#var distance_look : Vector3
-#if (distance_look.distance_to(character.position)):
-#		pass
 
-@onready var outline = get_node("mesh/outline")
-
-var mouse_sens : float = 0.1
+@onready var outline : MeshInstance3D = get_node("mesh/outline")
 @onready var initial_rotation : Vector3 = rotation
 
-func _input(event):
+var mouse_sens : float = 0.1
+
+func _input(event : InputEvent) -> void:
 	if (event is InputEventMouseMotion and is_interacting):
 		handle(event)
 
-func handle(event: InputEventMouseMotion):
+func handle(event: InputEventMouseMotion) -> void:
 		var changeh : int = event.relative.x
 		var changev : int = event.relative.y
 		rotate_y(deg_to_rad(changeh * mouse_sens))

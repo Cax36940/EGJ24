@@ -109,3 +109,6 @@ offset_right = 7.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="UI/Control/MarginContainer/HBoxContainer/VBoxContainer/Detain" to="." method="_on_detain_pressed"]
+[connection signal="pressed" from="UI/Control/MarginContainer2/HBoxContainer/VBoxContainer/Follow" to="." method="_on_follow_pressed"]

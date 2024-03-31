@@ -41,11 +41,23 @@ func _process(delta) -> void:
 				pause = true
 			else :
 				if (collider is Npc):
-					collider.disengage(self)
-					$UI/Control.visible = false
-					Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+					disengage(self,collider)
 				else: 
 					collider.put_down(self)
 					collider.is_interacting = false
 				pause = false
 	move_and_slide()
+
+func disengage(_self : CharacterBody3D, _collider : Object):
+	_collider.disengage(_self)
+	$UI/Control.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _on_detain_pressed():
+	collider.detain()
+
+
+func _on_follow_pressed():
+	collider.follow()
+	disengage(self,collider)
+	pause = false
