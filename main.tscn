@@ -1,87 +1,171 @@
-[gd_scene load_steps=10 format=3 uid="uid://snbl2jnj5lcn"]
+[gd_scene load_steps=18 format=3 uid="uid://q0cydo7oqo3m"]
 
 [ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
 [ext_resource type="Script" path="res://main_script.gd" id="1_wxsun"]
-[ext_resource type="PackedScene" uid="uid://c86k8bxfrt1ym" path="res://Item/test.tscn" id="2_wstmv"]
+[ext_resource type="PackedScene" uid="uid://wq2tqyju6bk5" path="res://models/character_test.gltf" id="2_sqe1a"]
 [ext_resource type="Script" path="res://path/Pas.gd" id="3_6qcil"]
-[ext_resource type="PackedScene" uid="uid://d0v18wmoull8n" path="res://path/step.tscn" id="4_cxvh7"]
-[ext_resource type="PackedScene" uid="uid://ccavsh76n0ik8" path="res://npc/npc.tscn" id="5_b45ur"]
+[ext_resource type="AnimationLibrary" uid="uid://icaobgrh5kli" path="res://models/base_character.glb" id="3_u5gk7"]
+[ext_resource type="PackedScene" uid="uid://cbkj0m3nwct04" path="res://models/character_cap.gltf" id="4_nirkb"]
+[ext_resource type="PackedScene" uid="uid://dgtuadf2sjrjh" path="res://models/manor.gltf" id="5_qgphy"]
+[ext_resource type="Texture2D" uid="uid://c3n8lwf0cy1p6" path="res://path/MusicienStep.png" id="8_l4aox"]
+[ext_resource type="Texture2D" uid="uid://bvrgvkrn4xhm2" path="res://path/AstroStep.png" id="9_7nlrw"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_6l268"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vlj6w"]
-
-[sub_resource type="Curve3D" id="Curve3D_uhc76"]
+[sub_resource type="Curve3D" id="Curve3D_bt36y"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.55507, 0.366779, -1.26061, 0, 0, 0, 0, 0, 0, 4.08921, 0.53616, -0.643076, 0.035, 0, 0, 0, 0, 0, 4.9236, -1.13664, -1.98907, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.91171, 0.000133517, -1.89199, -0.276617, -3.09944e-05, 0.420442, 0.687, 0, -0.42, 0.106, 0, -2.193, 0.04, 0, 0, 0, 0, 0, 0.816, 0, -10.11, -0.285, 0, 0, 0.04, 0, -0.555, 0.773, 0, -13.11, 0, 0, 0, 0, 0, 0, 1.773, 0, -13.124, 0, 0, 0, 0, 0, 0, 1.95391, 0.00976122, -0.11666, 0, 0, 0, 0, 0, 0, 2.98442, 0.0213279, 1.8615, 0, 0, 0, 0, 0, 0, 3.67295, 0.0107361, 1.88927),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_07s54"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0270939, 1.42144, -1, 0, 0, 0, 0, 0, 0, 0.0270939, 1.42144, 0, 0, 0, 0, 0, 0, 0, -1.97291, 1.42144, 0, 0, 0, 0, 0, 0, 0, -1.97291, 1.42144, -10),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
-[node name="Main" type="Node3D" node_paths=PackedStringArray("suspects", "paths")]
+[sub_resource type="Curve3D" id="Curve3D_5vt5p"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3, 4, 1, 0, 0, 0, 0, 0, 0, -3, 4, 10, 0, 0, 0, 0, 0, 0, -2, 4, 10, 0, 0, 0, 0, 0, 0, -1.90454, 4.0395, 9.6551),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_ghu2i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2, 0, 5, 0, 0, 0, 0, 0, 0, -2, 0, 4, 0, 0, 0, 0, 0, 0, -3, 0, 4, 0, 0, 0, 0, 0, 0, -3, 0, 9, 0, 0, 0, 0, 0, 0, -10, 0, 9, 0, 0, 0, 0, 0, 0, -11, 0, 10, 0, 0, 0, 0, 0, 0, -11, 0, 12, 0, 0, 0, 0, 0, 0, -12.0043, 0.0434122, 12.006, 0, 0, 0, 0, 0, 0, -13.9979, 0.0601319, 12.0093, 0, 0, 0, 0, 0, 0, -15.0142, 0.0611688, 10.0076),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="Curve3D" id="Curve3D_krvlk"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 1, 0, 0, 0, 0, 0, 0, -11, 0, 2, 0, 0, 0, 0, 0, 0, -13, 0, 2, 0, 0, 0, 0, 0, 0, -14, 0, 1),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_oleqe"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13, 0, 1, 0, 0, 0, 0, 0, 0, -11, 0, 2, 0, 0, 0, 0, 0, 0, -11, 0, 12, 0, 0, 0, 0, 0, 0, -11.9927, 0.0339168, 12.003, 0, 0, 0, 0, 0, 0, -16.023, 0.0776216, 9.89329),
+"tilts": PackedFloat32Array(0, 0, 0, 0, -0.00764112)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_iix3i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15, 0, 10, 0, 0, 0, 0, 0, 0, -14, 0, 13, 0, 0, 0, 0, 0, 0, -10, 0, 12, 0, 0, 0, 0, 0, 0, -9, 0, 11, 0, 0, 0, 0, 0, 0, -9, 0, 6, 0, 0, 0, 0, 0, 0, -6, 0, 3, 0, 0, 0, 0, 0, 0, -1, 0, 4, 0, 0, 0, 0, 0, 0, -1, 0, 5),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_ren8r"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2, 4, 10, 0, 0, 0, 0, 0, 0, -6, 4, 10),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Main" type="Node3D"]
+
+[node name="ModelsTestScene" type="Node3D" parent="." node_paths=PackedStringArray("suspects", "paths")]
 script = ExtResource("1_wxsun")
-suspects = [NodePath("Npc"), NodePath("Npc2")]
-paths = [NodePath("Path3D"), NodePath("Path3D2")]
+suspects = [null, null, null, null, null, null, null]
+paths = [null, null, null, null, null, null, null]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 0.0377366, -0.510555, -0.106507)
-mesh = SubResource("BoxMesh_6l268")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ModelsTestScene"]
+transform = Transform3D(0.970712, 0.170335, -0.169422, 0, 0.705204, 0.709005, 0.240245, -0.68824, 0.68455, -6.32232, 1.61564, 4.15804)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-collision_layer = 4
+[node name="character_test" parent="ModelsTestScene" instance=ExtResource("2_sqe1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06789, 0, -0.221775)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_vlj6w")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_test"]
+libraries = {
+"base_character": ExtResource("3_u5gk7")
+}
+autoplay = "base_character/Idle1"
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-07, -2, 0, 5, -8.74228e-08, 0, 0, 0, 5, 3.44182, 0.574687, -0.106507)
-mesh = SubResource("BoxMesh_6l268")
+[node name="character_cap" parent="ModelsTestScene" instance=ExtResource("4_nirkb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20229, 0, -0.0540302)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
-collision_layer = 4
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_cap"]
+libraries = {
+"base_character": ExtResource("3_u5gk7")
+}
+autoplay = "base_character/Idle1"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-shape = SubResource("BoxShape3D_vlj6w")
+[node name="manor" parent="ModelsTestScene" instance=ExtResource("5_qgphy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 11)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.25686e-10, -0.00527086, -4.99998, 2.83735, 1.64678, -0.01085, 4.11697, -1.13494, 0.00747764, -0.0993807, 0.915893, 3.31934)
-mesh = SubResource("BoxMesh_6l268")
+[node name="Character" parent="ModelsTestScene" instance=ExtResource("1_4i1pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550729, 2.65694)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
-collision_layer = 4
+[node name="DeadPath" type="Node3D" parent="ModelsTestScene"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
-shape = SubResource("BoxShape3D_vlj6w")
-
-[node name="Character" parent="." instance=ExtResource("1_4i1pm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.688443, 2.05172e-08, -0.72529, -0.307851, 0.90545, 0.292211, 0.656714, 0.424452, -0.623351, -3.9719, 3.19382, -12.6659)
-
-[node name="Test" parent="." instance=ExtResource("2_wstmv")]
-transform = Transform3D(-3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0, 0.9, 0, 2, -2.37721)
-
-[node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785835, -0.263058, -4.22628)
-visible = false
-curve = SubResource("Curve3D_uhc76")
+[node name="Path3D" type="Path3D" parent="ModelsTestScene/DeadPath"]
+transform = Transform3D(-0.0142763, 0, -0.999898, 0, 1, 0, 0.999898, 0, -0.0142763, 0.902268, 0.00201523, 0.849169)
+curve = SubResource("Curve3D_bt36y")
 script = ExtResource("3_6qcil")
-step_number = 4
+foot_image = ExtResource("8_l4aox")
+step_number = 41
 show = true
 
-[node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75152, 0.120062, -0.790683)
-visible = false
-curve = SubResource("Curve3D_uhc76")
+[node name="Path3D2" type="Path3D" parent="ModelsTestScene/DeadPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02709, 1.81076, 11)
+curve = SubResource("Curve3D_07s54")
 script = ExtResource("3_6qcil")
-step_number = 4
+foot_image = ExtResource("8_l4aox")
+step_number = 18
 show = true
 
-[node name="Step" parent="." instance=ExtResource("4_cxvh7")]
+[node name="Path3D3" type="Path3D" parent="ModelsTestScene/DeadPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.767797, 0)
+curve = SubResource("Curve3D_5vt5p")
+script = ExtResource("3_6qcil")
+foot_image = ExtResource("8_l4aox")
+spacing = 0.2
+step_number = 14
+show = true
 
-[node name="Npc" parent="." instance=ExtResource("5_b45ur")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31886, 1.1029, 0)
+[node name="Path3D4" type="Path3D" parent="ModelsTestScene/DeadPath"]
+curve = SubResource("Curve3D_ghu2i")
+script = ExtResource("3_6qcil")
+foot_image = ExtResource("8_l4aox")
+spacing = 0.2
+step_number = 31
+show = true
 
-[node name="Npc2" parent="." instance=ExtResource("5_b45ur")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397725, 3.11518, 4.75235)
+[node name="AstroPath" type="Node3D" parent="ModelsTestScene"]
+
+[node name="Path3D" type="Path3D" parent="ModelsTestScene/AstroPath"]
+curve = SubResource("Curve3D_krvlk")
+script = ExtResource("3_6qcil")
+foot_image = ExtResource("9_7nlrw")
+spacing = 0.2
+step_number = 21
+show = true
+
+[node name="Path3D2" type="Path3D" parent="ModelsTestScene/AstroPath"]
+curve = SubResource("Curve3D_oleqe")
+script = ExtResource("3_6qcil")
+foot_image = ExtResource("9_7nlrw")
+spacing = 0.2
+step_number = 23
+show = true
+
+[node name="Path3D3" type="Path3D" parent="ModelsTestScene/AstroPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+curve = SubResource("Curve3D_iix3i")
+script = ExtResource("3_6qcil")
+foot_image = ExtResource("9_7nlrw")
+spacing = 0.2
+step_number = 32
+show = true
+
+[node name="Path3D4" type="Path3D" parent="ModelsTestScene/AstroPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.767797, 0)
+curve = SubResource("Curve3D_ren8r")
+script = ExtResource("3_6qcil")
+foot_image = ExtResource("9_7nlrw")
+step_number = 6
+show = true
