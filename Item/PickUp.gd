@@ -1,14 +1,20 @@
 class_name PickUp
-extends StaticBody3D
+extends Node3D
+
+@export var path : String
 
 var start_position
 var is_pointing = false
 var is_interacting = false
 
-@onready var outline : MeshInstance3D = get_node("mesh/outline")
-@onready var initial_rotation : Vector3 = rotation
+var real_self : Node3D
+var outline : MeshInstance3D  
+var initial_rotation : Vector3 = rotation
 
 var mouse_sens : float = 0.1
+
+func _ready():
+	outline = get_node(path)
 
 func _input(event : InputEvent) -> void:
 	if (event is InputEventMouseMotion and is_interacting):

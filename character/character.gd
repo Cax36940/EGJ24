@@ -26,6 +26,8 @@ func _process(delta) -> void:
 		velocity.y -= FALL_SPEED * delta
 		if (ray_cast.is_colliding()):
 			collider = ray_cast.get_collider()
+			if !(collider is Npc):
+				collider = collider.get_parent()
 		else :
 			if (collider != null): collider.is_pointing = false
 			collider = null
@@ -52,7 +54,7 @@ func _process(delta) -> void:
 				## Prend un objet
 				else: 
 					collider.pick_up(self)
-					collider.get_node("mesh/outline").visible = true
+					collider.get_node(collider.path).visible = true
 					collider.is_interacting = true
 				pause = true
 				

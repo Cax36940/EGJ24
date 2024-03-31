@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://w0d8gclh4qxv"]
+[gd_scene load_steps=21 format=3 uid="uid://w0d8gclh4qxv"]
 
 [ext_resource type="Script" path="res://main_script.gd" id="1_wtdfj"]
 [ext_resource type="PackedScene" uid="uid://evawnt4g4y2s" path="res://models/character_test.gltf" id="2_hfyje"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c8wo26u4fjpty" path="res://path/MusicienStep.png" id="9_jw54s"]
 [ext_resource type="Texture2D" uid="uid://dmthkosel3mhp" path="res://path/AstroStep.png" id="10_pgeao"]
 [ext_resource type="PackedScene" uid="uid://q3526r6rrtic" path="res://npc/character_cap.tscn" id="11_wuk01"]
+[ext_resource type="PackedScene" uid="uid://bhkcsf8tkqs16" path="res://Item/bottle.tscn" id="12_qft0t"]
 
 [sub_resource type="Curve3D" id="Curve3D_bt36y"]
 _data = {
@@ -72,8 +73,8 @@ point_count = 2
 
 [node name="ModelsTestScene" type="Node3D" parent="." node_paths=PackedStringArray("suspects", "paths")]
 script = ExtResource("1_wtdfj")
-suspects = [NodePath("character_cap2"), null, null, null, null, null, null]
-paths = [NodePath("AstroPath"), null, null, null, null, null, null]
+suspects = [NodePath("character_cap2"), NodePath("character_cap2"), null, null, null, null, null]
+paths = [NodePath("AstroPath"), NodePath("DeadPath"), null, null, null, null, null]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="ModelsTestScene"]
 transform = Transform3D(0.970712, 0.170335, -0.169422, 0, 0.705204, 0.709005, 0.240245, -0.68824, 0.68455, -6.32232, 1.61564, 4.15804)
@@ -175,5 +176,6 @@ step_number = 6
 show = true
 
 [node name="character_cap2" parent="ModelsTestScene" instance=ExtResource("11_wuk01")]
-collision_layer = 16
-collision_mask = 0
+
+[node name="bottle" parent="ModelsTestScene" instance=ExtResource("12_qft0t")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4, 0.335158, 1.80016)
