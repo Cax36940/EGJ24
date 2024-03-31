@@ -4030,7 +4030,7 @@
 		},
 		{
 			"mesh":0,
-			"name":"Cube.001",
+			"name":"Cube.004",
 			"skin":0
 		},
 		{
@@ -4065,7 +4065,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.001",
+			"name":"Cube.004",
 			"primitives":[
 				{
 					"attributes":{
@@ -4090,8 +4090,8 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"colorpallette2.png",
-			"uri":"../colorpallette2.png"
+			"name":"colorpallette2",
+			"uri":"colorpallette2.png"
 		}
 	],
 	"skins":[
@@ -4328,7 +4328,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":864,
+			"count":2272,
 			"max":[
 				0.7519112229347229,
 				1.7018680572509766,
@@ -4336,7 +4336,7 @@
 			],
 			"min":[
 				-0.7519112229347229,
-				0.004290342330932617,
+				0.00429034698754549,
 				-0.12321771681308746
 			],
 			"type":"VEC3"
@@ -4344,31 +4344,31 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":864,
+			"count":2272,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":864,
+			"count":2272,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5121,
-			"count":864,
+			"count":2272,
 			"type":"VEC4"
 		},
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":864,
+			"count":2272,
 			"type":"VEC4"
 		},
 		{
 			"bufferView":5,
 			"componentType":5123,
-			"count":1440,
+			"count":3432,
 			"type":"SCALAR"
 		},
 		{
@@ -4381,44 +4381,44 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":10368,
+			"byteLength":27264,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":10368,
-			"byteOffset":10368,
+			"byteLength":27264,
+			"byteOffset":27264,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":6912,
-			"byteOffset":20736,
+			"byteLength":18176,
+			"byteOffset":54528,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":3456,
-			"byteOffset":27648,
+			"byteLength":9088,
+			"byteOffset":72704,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":13824,
-			"byteOffset":31104,
+			"byteLength":36352,
+			"byteOffset":81792,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2880,
-			"byteOffset":44928,
+			"byteLength":6864,
+			"byteOffset":118144,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":14208,
-			"byteOffset":47808
+			"byteOffset":125008
 		}
 	],
 	"samplers":[
@@ -4429,8 +4429,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":62016,
-			"uri":"character_test.bin"
+			"byteLength":139216,
+			"uri":"character_pearl.bin"
 		}
 	]
 }
