@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
 [ext_resource type="Script" path="res://main_script.gd" id="1_wxsun"]
-[ext_resource type="PackedScene" uid="uid://wq2tqyju6bk5" path="res://models/character_test.gltf" id="2_sqe1a"]
+[ext_resource type="PackedScene" uid="uid://evawnt4g4y2s" path="res://models/character_test.gltf" id="2_sqe1a"]
 [ext_resource type="Script" path="res://path/Pas.gd" id="3_6qcil"]
 [ext_resource type="AnimationLibrary" uid="uid://icaobgrh5kli" path="res://models/base_character.glb" id="3_u5gk7"]
 [ext_resource type="PackedScene" uid="uid://cbkj0m3nwct04" path="res://models/character_cap.gltf" id="4_nirkb"]
 [ext_resource type="PackedScene" uid="uid://dgtuadf2sjrjh" path="res://models/manor.gltf" id="5_qgphy"]
-[ext_resource type="Texture2D" uid="uid://c3n8lwf0cy1p6" path="res://path/MusicienStep.png" id="8_l4aox"]
-[ext_resource type="Texture2D" uid="uid://bvrgvkrn4xhm2" path="res://path/AstroStep.png" id="9_7nlrw"]
+[ext_resource type="Texture2D" uid="uid://c8wo26u4fjpty" path="res://path/MusicienStep.png" id="8_l4aox"]
+[ext_resource type="Texture2D" uid="uid://dmthkosel3mhp" path="res://path/AstroStep.png" id="9_7nlrw"]
 
 [sub_resource type="Curve3D" id="Curve3D_bt36y"]
 _data = {
