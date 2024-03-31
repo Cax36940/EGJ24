@@ -1,7 +1,7 @@
 class_name Npc
 extends StaticBody3D
 
-var is_interacting = false
+var is_pointing = false
 var highlight_trace = false
 
 # Called when the node enters the scene tree for the first time.
