@@ -1,0 +1,152 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dgtuadf2sjrjh"
+path="res://.godot/imported/manor.gltf-95744c2bea428b61e6f1c5b115f7a041.scn"
+
+[deps]
+
+source_file="res://models/manor.gltf"
+dest_files=["res://.godot/imported/manor.gltf-95744c2bea428b61e6f1c5b115f7a041.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Cube_001": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Cube_002": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Cube_003": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Cube_004": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Cube_005": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Cube_006": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Cube_007": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Lamp_001": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Lamp_002": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Lamp_003": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_023": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_024": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_025": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_026": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_027": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:Plane_028": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:armchair": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:armchair_001": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:bookshelf": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/shape_type": 1
+},
+"PATH:bookshelf_001": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/shape_type": 1
+},
+"PATH:bookshelf_002": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/shape_type": 1
+},
+"PATH:library": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+},
+"PATH:table": {
+"generate/physics": true,
+"physics/layer": 6,
+"physics/shape_type": 2
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

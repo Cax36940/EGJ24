@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw6dulcyqlrxy"]
+
+[ext_resource type="AnimationLibrary" uid="uid://icaobgrh5kli" path="res://models/base_character.glb" id="2_u77s8"]
+[ext_resource type="PackedScene" uid="uid://wq2tqyju6bk5" path="res://models/character_test.gltf" id="3_cq773"]
+[ext_resource type="PackedScene" uid="uid://cbkj0m3nwct04" path="res://models/character_cap.gltf" id="3_td7oo"]
+[ext_resource type="PackedScene" uid="uid://dgtuadf2sjrjh" path="res://models/manor.gltf" id="4_6tewp"]
+[ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="5_1fhly"]
+
+[node name="ModelsTestScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.970712, 0.170335, -0.169422, 0, 0.705204, 0.709005, 0.240245, -0.68824, 0.68455, -6.32232, 1.61564, 4.15804)
+
+[node name="character_test" parent="." instance=ExtResource("3_cq773")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06789, 0, -0.221775)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character_test"]
+libraries = {
+"base_character": ExtResource("2_u77s8")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_cap" parent="." instance=ExtResource("3_td7oo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20229, 0, -0.0540302)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character_cap"]
+libraries = {
+"base_character": ExtResource("2_u77s8")
+}
+autoplay = "base_character/Idle1"
+
+[node name="manor" parent="." instance=ExtResource("4_6tewp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 11)
+
+[node name="Character" parent="." instance=ExtResource("5_1fhly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0435802, 2.65694)
