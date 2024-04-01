@@ -18,8 +18,10 @@ func engage(character : CharacterBody3D):
 	## Informe la scène parent du joueur qui intéragie
 	main_scene.idx_current = main_scene.suspects.find(self,0)
 
-func detain():
-	get_tree().quit()
+func detain(character : CharacterBody3D):
+	#get_tree().quit()
+	character.is_ending = true
+	main_scene.detain()
 
 
 func follow():

@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Egj 24"
-run/main_scene="res://UI/start.tscn"
+config/name="🏡🔪🔍"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://logo.png"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bohto1puwqijh"]
+[gd_scene load_steps=52 format=3 uid="uid://bohto1puwqijh"]
 
 [ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
 [ext_resource type="Script" path="res://main_script.gd" id="1_wxsun"]
@@ -24,6 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://c8bscm4ynufgv" path="res://Item/journal_2.tscn" id="22_b167i"]
 [ext_resource type="PackedScene" uid="uid://d2opimkpmix3h" path="res://Item/nomorelove.tscn" id="23_6o4t8"]
 [ext_resource type="PackedScene" uid="uid://c4ldvqq03tqdn" path="res://models/character_dead.gltf" id="23_j4va1"]
+[ext_resource type="AudioStream" uid="uid://cxo1vaxmno73n" path="res://sfx/applause-alks-ses-efekti-125030.mp3" id="24_uj0pb"]
+[ext_resource type="AudioStream" uid="uid://surcqkidjk0l" path="res://sfx/boo-6377.mp3" id="25_hnsme"]
+[ext_resource type="AnimationLibrary" uid="uid://icaobgrh5kli" path="res://models/base_character.glb" id="27_2xy7j"]
+[ext_resource type="PackedScene" uid="uid://d0cqk78vnlhoo" path="res://models/character_rando.gltf" id="28_720tm"]
 
 [sub_resource type="Curve3D" id="Curve3D_bt36y"]
 _data = {
@@ -193,6 +197,7 @@ point_count = 11
 script = ExtResource("1_wxsun")
 suspects = [NodePath("character_cap"), NodePath("character_cook"), NodePath("character_earrings"), NodePath("character_glasses"), NodePath("character_hair"), NodePath("character_pearl"), NodePath("character_rando"), NodePath("character_rando2")]
 paths = [NodePath("AstroPath"), NodePath("CookPath"), NodePath("MaitressePath"), NodePath("DaronPath"), NodePath("DaronnePath"), NodePath("CopinePath"), NodePath("RandomPath"), NodePath("DeadPath")]
+guilty_idx = 2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="ModelsTestScene"]
 transform = Transform3D(0.970712, 0.170335, -0.169422, 0, 0.705204, 0.709005, 0.240245, -0.68824, 0.68455, -6.32232, 1.61564, 4.15804)
@@ -201,7 +206,7 @@ transform = Transform3D(0.970712, 0.170335, -0.169422, 0, 0.705204, 0.709005, 0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 11)
 
 [node name="Character" parent="ModelsTestScene" instance=ExtResource("1_4i1pm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550729, 2.65694)
+transform = Transform3D(-0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, -0.826098, 1.39545, 0.119327, -0.509125)
 
 [node name="DeadPath" type="Node3D" parent="ModelsTestScene"]
 script = ExtResource("7_dt1yu")
@@ -452,6 +457,140 @@ transform = Transform3D(0.805642, -0.022958, 0.591958, 0.592387, 0.0385811, -0.8
 
 [node name="nomorelove" parent="ModelsTestScene" instance=ExtResource("23_6o4t8")]
 transform = Transform3D(0.746969, 0, 0.654913, 0, 0.993415, 0, -0.654913, 0, 0.746969, -5.58856, 3.27327, 0.525208)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ModelsTestScene"]
+stream = ExtResource("24_uj0pb")
+volume_db = -9.695
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ModelsTestScene"]
+stream = ExtResource("25_hnsme")
+volume_db = -9.695
+
+[node name="character_rando3" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.969171, 0, 0.24639, 0, 1, 0, -0.24639, 0, 0.969171, -7.74347, -0.126521, 18.5662)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando3"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando4" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.969171, 0, 0.24639, 0, 1, 0, -0.24639, 0, 0.969171, -6.4691, -0.129721, 16.6106)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando4"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando6" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.969171, 0, 0.24639, 0, 1, 0, -0.24639, 0, 0.969171, -1.15216, -0.129721, 14.3591)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando6"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando8" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.914833, 0, -0.403833, 0, 1, 0, 0.403833, 0, 0.914833, 3.04957, -0.129721, 15.4924)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando8"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando11" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.914833, 0, -0.403833, 0, 1, 0, 0.403833, 0, 0.914833, 7.40013, -0.129721, 19.4906)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando11"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando12" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(-0.881147, 0, 0.472843, 0, 1, 0, -0.472843, 0, -0.881147, 7.40013, -0.129721, 21.2062)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando12"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando13" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(-0.881147, 0, 0.472843, 0, 1, 0, -0.472843, 0, -0.881147, 17.4549, -0.129721, 21.5558)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando13"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando14" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.960079, 0, -0.279729, 0, 1, 0, 0.279729, 0, 0.960079, 17.4549, -0.129721, 19.9395)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando14"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando15" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.00767937, 0, 0.999971, 0, 1, 0, -0.999971, 0, 0.00767937, 14.6059, -0.129721, 15.7185)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando15"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando16" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(-0.272448, 0, -0.962171, 0, 1, 0, 0.962171, 0, -0.272448, 15.5034, -0.129721, 15.7185)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando16"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando7" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.996274, 0, -0.0862516, 0, 1, 0, 0.0862516, 0, 0.996274, 1.27298, -0.129721, 14.3591)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando7"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando9" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(-0.621668, 0, 0.783281, 0, 1, 0, -0.783281, 0, -0.621668, 1.28451, -0.129721, 16.2145)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando9"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando10" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(-0.210694, 0, -0.977552, 0, 1, 0, 0.977552, 0, -0.210694, 8.28769, -0.129721, 21.2593)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando10"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
+
+[node name="character_rando5" parent="ModelsTestScene" instance=ExtResource("28_720tm")]
+transform = Transform3D(0.851562, 0, 0.524253, 0, 1, 0, -0.524253, 0, 0.851562, -9.49357, -0.131853, 19.2569)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModelsTestScene/character_rando5"]
+libraries = {
+"base_character": ExtResource("27_2xy7j")
+}
+autoplay = "base_character/Idle1"
 
 [node name="character_dead" parent="." instance=ExtResource("23_j4va1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9859, -0.00242609, 10.989)
