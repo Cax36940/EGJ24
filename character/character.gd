@@ -12,6 +12,8 @@ var pause : bool = false
 var is_interacting : bool = false
 var steps : Node3D = null
 
+var prev_paths : Node3D = null 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -32,15 +34,28 @@ func _process(delta) -> void:
 			if (collider != null): collider.is_pointing = false
 			collider = null
 		if (ray_cast_highlighter.is_colliding()):
-			steps = ray_cast_highlighter.get_collider()
-			var paths = steps.get_parent().get_parent().get_parent()
+			if (steps != null):
+				var prev_paths = steps.get_parent().get_parent().get_parent()
+				steps = ray_cast_highlighter.get_collider()
+				var paths = steps.get_parent().get_parent().get_parent()
+				print(paths)
+				if (prev_paths.highlighted and prev_paths != paths): prev_paths.toggle_highlight()
+				if !(paths.highlighted): paths.toggle_highlight()
+			else :
+				steps = ray_cast_highlighter.get_collider()
+				var paths = steps.get_parent().get_parent().get_parent()
+				
+				
+			#if (prev_paths != null and prev_paths != paths and prev_paths.highlighted) : prev_paths.toggle_highlight()
 			## Appeler fonction mettre highlight
-			if !(paths.highlighted): paths.toggle_highlight()
+			#prev_paths = null
+				if !(paths.highlighted): paths.toggle_highlight()
 		else :
 			if (steps != null): 
 				var paths = steps.get_parent().get_parent().get_parent()
+				prev_paths = paths
 				if (paths.highlighted): paths.toggle_highlight()
-			steps = null
+			#steps = null
 	if (collider != null):
 		collider.is_pointing = true
 		if (Input.is_action_just_pressed("interact") and collider != null and !is_interacting):

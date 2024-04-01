@@ -11,7 +11,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y1q7b"]
 
 [node name="Character" type="CharacterBody3D"]
-collision_mask = 30
+collision_mask = 22
 script = ExtResource("1_fyap8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -28,15 +28,15 @@ current = true
 script = ExtResource("2_ujy23")
 
 [node name="Point" type="Node3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0104125, -1.00235)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0104125, -0.321703)
 
 [node name="interaction" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(6, 0, 0, 0, -2.62268e-07, -6, 0, 6, -2.62268e-07, 0, -0.0416312, 0)
+transform = Transform3D(6, 0, 0, 0, -2.62268e-07, -6, 0, 6, -2.62268e-07, 0, 0.0031054, 0)
 collision_mask = 24
 collide_with_areas = true
 
 [node name="highlight" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(6, 0, 0, 0, -2.62268e-07, -6, 0, 6, -2.62268e-07, 0, -0.0416312, 0)
+transform = Transform3D(6, 0, 0, 0, -2.62268e-07, -6, 0, 6, -2.62268e-07, 0, 0, 0)
 collision_mask = 32
 collide_with_areas = true
 
@@ -56,8 +56,8 @@ size_flags_horizontal = 4
 [node name="MarginContainer" type="MarginContainer" parent="UI/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.343
-anchor_top = 0.348
+anchor_left = 0.154
+anchor_top = 0.201
 anchor_right = 0.343
 anchor_bottom = 0.53
 offset_left = -42.0
@@ -88,7 +88,7 @@ icon = ExtResource("3_s7l2e")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51
-anchor_top = 0.348
+anchor_top = 0.19
 anchor_right = 0.618
 anchor_bottom = 0.5
 offset_left = -42.0

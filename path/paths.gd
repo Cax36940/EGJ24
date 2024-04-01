@@ -9,3 +9,11 @@ func toggle_highlight() -> void:
 		highlighted = true
 	for child : Path3D in get_children():
 		child.toggle_highlight()
+
+func toggle_visible() -> void :
+	if (visible):
+		visible = false
+	else :
+		visible = true
+	for child : Path3D in get_children():
+		child.toggle_visible()

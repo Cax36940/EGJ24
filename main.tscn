@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bohto1puwqijh"]
+[gd_scene load_steps=48 format=3 uid="uid://bohto1puwqijh"]
 
 [ext_resource type="PackedScene" uid="uid://c5k2nkpcqyyru" path="res://character/character.tscn" id="1_4i1pm"]
 [ext_resource type="Script" path="res://main_script.gd" id="1_wxsun"]
@@ -11,17 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://dmthkosel3mhp" path="res://path/AstroStep.png" id="9_7nlrw"]
 [ext_resource type="Texture2D" uid="uid://7ejor56t6rht" path="res://path/MaitresseStep.png" id="11_ixeg6"]
 [ext_resource type="Texture2D" uid="uid://cefmnsvnxyy31" path="res://path/MotherStep.png" id="11_r4nbe"]
-[ext_resource type="PackedScene" path="res://npc/character_cap.tscn" id="14_fpwwl"]
+[ext_resource type="PackedScene" uid="uid://q3526r6rrtic" path="res://npc/character_cap.tscn" id="14_fpwwl"]
 [ext_resource type="Texture2D" uid="uid://bl1vrkodgtpch" path="res://path/CookStep.png" id="14_s47nr"]
-[ext_resource type="PackedScene" path="res://npc/character_cook.tscn" id="15_evfqt"]
+[ext_resource type="PackedScene" uid="uid://bxxyavxn58tda" path="res://npc/character_cook.tscn" id="15_evfqt"]
 [ext_resource type="Texture2D" uid="uid://b8in84kgva5vl" path="res://path/RandomStep.png" id="15_txaqt"]
-[ext_resource type="PackedScene" path="res://npc/character_earrings.tscn" id="16_3xuw7"]
-[ext_resource type="PackedScene" path="res://npc/character_glasses.tscn" id="17_m0p8o"]
-[ext_resource type="PackedScene" path="res://npc/character_hair.tscn" id="18_tq4bc"]
-[ext_resource type="PackedScene" path="res://npc/character_pearl.tscn" id="19_2w0q1"]
-[ext_resource type="PackedScene" path="res://npc/character_rando.tscn" id="20_fa770"]
-[ext_resource type="PackedScene" path="res://Item/bloody_knife.tscn" id="21_cyarh"]
-[ext_resource type="PackedScene" path="res://Item/journal_2.tscn" id="22_b167i"]
+[ext_resource type="PackedScene" uid="uid://ys46pmhhrm5d" path="res://npc/character_earrings.tscn" id="16_3xuw7"]
+[ext_resource type="PackedScene" uid="uid://dvyneili3rw02" path="res://npc/character_glasses.tscn" id="17_m0p8o"]
+[ext_resource type="PackedScene" uid="uid://b2c120jggym81" path="res://npc/character_hair.tscn" id="18_tq4bc"]
+[ext_resource type="PackedScene" uid="uid://b808c4v0mh521" path="res://npc/character_pearl.tscn" id="19_2w0q1"]
+[ext_resource type="PackedScene" uid="uid://meayuvler12a" path="res://npc/character_rando.tscn" id="20_fa770"]
+[ext_resource type="PackedScene" uid="uid://xajpde3mxwgs" path="res://Item/bloody_knife.tscn" id="21_cyarh"]
+[ext_resource type="PackedScene" uid="uid://c8bscm4ynufgv" path="res://Item/journal_2.tscn" id="22_b167i"]
+[ext_resource type="PackedScene" uid="uid://d2opimkpmix3h" path="res://Item/nomorelove.tscn" id="23_6o4t8"]
 [ext_resource type="PackedScene" uid="uid://c4ldvqq03tqdn" path="res://models/character_dead.gltf" id="23_j4va1"]
 
 [sub_resource type="Curve3D" id="Curve3D_bt36y"]
@@ -447,7 +448,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94263, -4.1012, 1.58868)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6858, 1.06708, 13.8311)
 
 [node name="Journal2" parent="ModelsTestScene" instance=ExtResource("22_b167i")]
-transform = Transform3D(0.714595, 0.69884, 0.0312575, 0, 0.044683, -0.999001, -0.699539, 0.713881, 0.0319302, -8.8911, 4.1953, 1.18948)
+transform = Transform3D(0.805642, -0.022958, 0.591958, 0.592387, 0.0385811, -0.804729, -0.00436346, 0.998992, 0.0446825, -8.3435, 3.94188, 1.09828)
+
+[node name="nomorelove" parent="ModelsTestScene" instance=ExtResource("23_6o4t8")]
+transform = Transform3D(0.746969, 0, 0.654913, 0, 0.993415, 0, -0.654913, 0, 0.746969, -5.58856, 3.27327, 0.525208)
 
 [node name="character_dead" parent="." instance=ExtResource("23_j4va1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9859, -0.00242609, 10.989)

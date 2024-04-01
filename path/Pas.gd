@@ -41,6 +41,11 @@ func toggle_highlight():
 		else :
 			tween.tween_property(normal, "modulate", Color(Color.WHITE,1), 0.1)
 
+
+func toggle_visible():
+	for child : Node3D in get_children():
+		child.toggle_visible()
+
 func update_path():
 	for i in range(step_number):
 		var step_instance : Node3D = step_scene.instantiate()

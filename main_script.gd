@@ -6,10 +6,7 @@ var idx_current : int
 
 func toggle_follow():
 	var current_path : Node3D = paths[idx_current]
-	if (current_path.visible):
-		current_path.visible = false
-	else :
-		current_path.visible = true
+	current_path.toggle_visible()
 
 func stop_follow():
 	for path in paths:

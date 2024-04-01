@@ -24,8 +24,7 @@ func handle(event: InputEventMouseMotion) -> void:
 		var changeh : int = event.relative.x
 		var changev : int = event.relative.y
 		rotate_y(deg_to_rad(changeh * mouse_sens))
-		rotate_x(deg_to_rad(changev * mouse_sens))
-
+		rotate_x(deg_to_rad(-changev * mouse_sens))
 func _process(delta : float) -> void:
 	if (is_pointing):
 		outline.visible = true
